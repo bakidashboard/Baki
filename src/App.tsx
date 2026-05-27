@@ -11,7 +11,6 @@ import { ref, push, set, onValue, off } from 'firebase/database';
 import { database } from './firebase/config';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { AmbientBackground } from './components/AmbientBackground';
 import { WelcomeScreen } from './screens/WelcomeScreen';
 import { AuthScreen } from './screens/AuthScreen';
@@ -475,7 +474,6 @@ function AppContent() {
   return (
     <>
       <AmbientBackground />
-      <LanguageSwitcher />
       <Toaster position="bottom-center" toastOptions={{ style: { background: '#333', color: '#fff', borderRadius: '16px' } }} />
       
       <main className="relative z-10 h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden">
