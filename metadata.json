@@ -1,0 +1,6 @@
+{
+  "name": "BAKI Academic Advisor",
+  "description": "An interactive, premium learning companion following the Algerian educational curriculum, designed with advanced visual analytics, deep AI material processing, custom study plans, and content administration mechanisms.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

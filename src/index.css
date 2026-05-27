@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-baki-primary: #58CC02;
+  --color-baki-primary-hover: #46A302;
+  --color-baki-primary-active: #3D8C02;
+  --color-baki-lime: #E2F9CC;
+  --color-baki-mint: #E7F7D8;
+  --color-baki-sky: #38BDF8;
+  --color-baki-purple: #CE82FF;
+  --color-baki-gold: #FFC800;
+  --color-baki-peach: #FF9600;
+  --color-baki-pink: #FBCFE8;
+  
+  --color-baki-bg: #F7FAF5;
+  --color-baki-surface: #FFFFFF;
+  --color-baki-text: #1A1A1A;
+  --color-baki-text-light: #9CA3AF;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-baki-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-baki-float: 0 32px 64px -12px rgba(88,204,2,0.12);
+  --shadow-baki-button: 0 8px 0 0 #46A302;
+  --shadow-baki-button-hover: 0 4px 0 0 #46A302;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
+    height: -webkit-fill-available;
+    overflow: hidden;
+    background-color: var(--color-baki-bg);
+  }
+  body {
+    color: var(--color-baki-text);
+    font-family: var(--font-arabic);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

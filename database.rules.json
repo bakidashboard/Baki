@@ -1,0 +1,42 @@
+{
+  "rules": {
+    ".read": "auth != null && (auth.token.admin == true || root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('isAdmin').val() == true)",
+    ".write": "auth != null && (auth.token.admin == true || root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('isAdmin').val() == true)",
+    "users": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || auth.token.moderator == true || root.child('users').child(auth.uid).child('role').val() == 'moderator')",
+        ".write": "auth != null && (auth.uid == $uid || auth.token.admin == true || root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('isAdmin').val() == true)"
+      }
+    },
+    "presence": {
+      "$uid": {
+        ".read": "auth != null",
+        ".write": "auth != null && (auth.uid == $uid || auth.token.admin == true)"
+      }
+    },
+    "chats": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "messages": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "settings": {
+      ".read": "auth != null && auth.token.admin == true",
+      ".write": "auth != null && auth.token.admin == true"
+    },
+    "notifications": {
+      "$uid": {
+         ".read": "auth != null && (auth.uid == $uid || auth.token.admin == true)",
+         ".write": "auth != null && (auth.uid == $uid || auth.token.admin == true)"
+      }
+    },
+    "progress": {
+       "$uid": {
+         ".read": "auth != null && (auth.uid == $uid || auth.token.teacher == true || auth.token.admin == true)",
+         ".write": "auth != null && (auth.uid == $uid || auth.token.admin == true)"
+       }
+    }
+  }
+}
